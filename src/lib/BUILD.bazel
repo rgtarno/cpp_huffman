@@ -1,0 +1,43 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+
+cc_library(
+    name = "huffman_compressor",
+    srcs = [
+        "huffman_compressor.cpp",
+        "huffman_tree_node.cpp",
+        "include/huffman_code_point.hpp",
+        "include/huffman_compress_internal.hpp",
+        "include/huffman_tree_node.hpp",
+    ],
+    hdrs = [
+        "include/huffman_compress.hpp",
+    ],
+    deps = [
+        ":bit_writer",
+        ":debug_macros",
+    ],
+)
+
+cc_library(
+    name = "bit_writer",
+    srcs = [
+        "bit_writer.cpp",
+    ],
+    hdrs = [
+        "include/bit_writer.hpp",
+    ],
+    deps = [
+    ],
+)
+
+cc_library(
+    name = "debug_macros",
+    hdrs = [
+        "include/debug_macros.hpp",
+    ],
+    deps = [
+        "@fmt",
+    ],
+)

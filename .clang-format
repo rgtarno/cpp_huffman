@@ -9,8 +9,8 @@ ConstructorInitializerIndentWidth: '4'
 CompactNamespaces: 'false'
 NamespaceIndentation: All
 Standard:        Cpp11
-IndentWidth:     2   
-TabWidth:        2   
-UseTab:          Never 
+IndentWidth:     2
+TabWidth:        2
+UseTab:          Never
 
 ...

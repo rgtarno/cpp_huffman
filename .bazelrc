@@ -1,0 +1,18 @@
+
+build --cxxopt="-std=c++20"
+build --action_env=BAZEL_CXXOPTS="-std=c++20"
+build --copt="-Wall"
+build --copt="-Wextra"
+build --copt="-Wshadow"
+build --copt="-Wpedantic"
+build --copt="-fno-omit-frame-pointer"
+build --copt="-Wformat=2"
+build --copt="-fdiagnostics-color=always"
+
+build:asan --copt="-fsanitize=address"
+build:asan --linkopt="-fsanitize=address"
+
+common --verbose_failures
+
+test --build_tests_only
+test --test_verbose_timeout_warnings
